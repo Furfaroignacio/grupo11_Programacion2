@@ -70,10 +70,23 @@ public class Lista implements ILista  {
     public void mostrarLista() {
         INodo actual = primero;
         while (actual != null) {
-        	//getDato --- Del Nodo ---- Vehiculo!!!
             System.out.print(actual.getDato() +"\n");
             actual = actual.getSiguiente();
         }
         
     }
+    
+    public Vehiculo buscarPorPatente(String patente) {
+        INodo actual = primero;
+        while (actual != null) {
+            if (actual.getDato().getPatente().equalsIgnoreCase(patente)) {
+                return actual.getDato();
+            }
+            actual = actual.getSiguiente();
+        }
+        return null;
+    }
+    
+  
+    
 }
