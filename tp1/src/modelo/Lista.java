@@ -1,9 +1,10 @@
 package modelo;
 
-
+import interfaces.ILista;
+import interfaces.INodo;
 
 //Saque la implementación implements ILista, OJO ustedes la mantienen
-public class Lista  {
+public class Lista implements ILista  {
 	
     private Nodo primero;
 

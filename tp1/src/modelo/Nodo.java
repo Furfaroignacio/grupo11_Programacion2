@@ -1,14 +1,17 @@
 package modelo;
 
-public class Nodo {
+import interfaces.INodo;
+import modelo.Vehiculo;
+
+public class Nodo implements INodo {
     private Vehiculo dato;
-    private Nodo siguiente;
-    private Nodo anterior; 
+    private INodo siguiente;
+    private INodo anterior;
 
     public Nodo(Vehiculo dato) {
         this.dato = dato;
         this.siguiente = null;
-        this.anterior = null; 
+        this.anterior = null;
     }
 
     public Vehiculo getDato() {
@@ -19,19 +22,19 @@ public class Nodo {
         this.dato = dato;
     }
 
-    public Nodo getSiguiente() {
+    public INodo getSiguiente() {
         return siguiente;
     }
 
-    public void setSiguiente(Nodo siguiente) {
+    public void setSiguiente(INodo siguiente) {
         this.siguiente = siguiente;
     }
 
-    public Nodo getAnterior() {
+    public INodo getAnterior() {
         return anterior;
     }
 
-    public void setAnterior(Nodo anterior) {
+    public void setAnterior(INodo anterior) {
         this.anterior = anterior;
     }
 }
