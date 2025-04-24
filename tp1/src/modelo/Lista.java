@@ -19,13 +19,13 @@ public class Lista  {
     
     public void insertarPrimero(Vehiculo dato) {
         Nodo nuevo = new Nodo(dato);
-    	if(!esVacia()) {
-        nuevo.setSiguiente(primero);
+        if (!esVacia()) {
+            nuevo.setSiguiente(primero);
+            primero.setAnterior(nuevo);
+        }
         primero = nuevo;
-    	}else {
-    		primero = nuevo;
-    	}
     }
+
 
     
     public void insertarUltimo(Vehiculo dato) {
@@ -38,8 +38,10 @@ public class Lista  {
                 actual = actual.getSiguiente();
             }
             actual.setSiguiente(nuevo);
+            nuevo.setAnterior(actual); 
         }
     }
+
 
   
 
