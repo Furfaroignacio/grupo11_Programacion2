@@ -34,7 +34,7 @@ public class Lista implements ILista  {
         if (esVacia()) {
             primero = nuevo;
         } else {
-            Nodo actual = primero;
+            INodo actual = primero;
             while (actual.getSiguiente() != null) {
                 actual = actual.getSiguiente();
             }
@@ -56,7 +56,7 @@ public class Lista implements ILista  {
    
     public int cantidadElementos() {
         int contador = 0;
-        Nodo actual = primero;
+        INodo actual = primero;
 
         while (actual != null) {
             contador++;
@@ -68,7 +68,7 @@ public class Lista implements ILista  {
 
  
     public void mostrarLista() {
-        Nodo actual = primero;
+        INodo actual = primero;
         while (actual != null) {
         	//getDato --- Del Nodo ---- Vehiculo!!!
             System.out.print(actual.getDato() +"\n");
