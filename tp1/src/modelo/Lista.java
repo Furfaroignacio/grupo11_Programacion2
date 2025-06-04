@@ -70,12 +70,12 @@ public class Lista implements ILista  {
     public void mostrarLista() {
         INodo actual = primero;
         while (actual != null) {
-        	//getDato --- Del Nodo ---- Vehiculo!!!
             System.out.print(actual.getDato() +"\n");
             actual = actual.getSiguiente();
         }
         
     }
+<<<<<<< HEAD
     public void ordenarPorPatente() {
         if (esVacia() || primero.getSiguiente() == null) {
             return; 
@@ -99,3 +99,20 @@ public class Lista implements ILista  {
 
 
 }
+=======
+    
+    public Vehiculo buscarPorPatente(String patente) {
+        INodo actual = primero;
+        while (actual != null) {
+            if (actual.getDato().getPatente().equalsIgnoreCase(patente)) {
+                return actual.getDato();
+            }
+            actual = actual.getSiguiente();
+        }
+        return null;
+    }
+    
+  
+    
+}
+>>>>>>> 195b788c2f2bdb1042b225a80d5361007e2dfad1
