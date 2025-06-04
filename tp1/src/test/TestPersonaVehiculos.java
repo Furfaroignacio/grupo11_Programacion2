@@ -1,42 +1,60 @@
 package test;
 
-import modelo.Persona;
+import modelo.Lista;
 import modelo.Vehiculo;
-
-///Listas simplemente enlazadas N - > sig,  ant
-///Listas doblemete enlazadas (int)
-///Persona que tiene una lista de Vehiculos!!!!
+import modelo.Persona;
 
 public class TestPersonaVehiculos {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		Persona p = new Persona(11111, "Nico Perez");//Se crea la lista nula!!
-		Vehiculo v = new Vehiculo("11AA222", "Fiat Uno");
-		
-		//Dos formas de insertar en la lista
-		//La primera por parametos, la segunda por referencia
-		p.getListaVehiculos().insertarPrimero(new Vehiculo("xxx111", "Toyota"));
-		p.getListaVehiculos().insertarPrimero(v);
-		
-		//Muestro la persona, y sus vehiculos concatenados
-		//Atentos a cómo manejo el toString de ambos y los
-		//procedimientos de mostrar. 
-		p.mostrarPersona();
-		///Notar que toda la información quedó guardada en la persona
-		///
-		///NOTAS: 
-		///esto es una ayuda para el tp1, pero tienen muchas cosas que mejorar
-		///1 - Hacer y usar una lista doblemente enlazada
-		///2 - Testear más metodos, incluso algunos sofisticados como 
-		///ordenar y buscar vehiculos
-		///3 - El nodo tiene que tener el anterior, ojo que eso modifica los métodos
-		///4 - Yo omiti las interfaces para hacer más rapido el ejemplo
-		///Ustedes tienen que poner las interfaces y usarlas bien
-		///Ningún items es obligatorio, pero cuanto más completo más nota. 
-		
+    public static void main(String[] args) {
+        // Test Lista
+        Lista lista = new Lista();
 
-	}
+        // Test esVacia
+        if (!lista.esVacia()) {
+            System.err.println("Error: La lista debería estar vacía al inicio");
+        }
 
+        // Test insertarPrimero
+        Vehiculo vehiculo1 = new Vehiculo("ZBC993", "Modelo1");
+        lista.insertarPrimero(vehiculo1);
+        if (lista.esVacia()) {
+            System.err.println("Error: La lista no debería estar vacía después de insertar un elemento");
+        }
+        if (!lista.obtenerPrimero().equals(vehiculo1)) {
+            System.err.println("Error: El primer elemento debería ser el vehículo insertado");
+        }
+
+        // Test insertarUltimo
+        Vehiculo vehiculo2 = new Vehiculo("XYZ789", "Modelo2");
+        lista.insertarUltimo(vehiculo2);
+        if (lista.cantidadElementos() != 2) {
+            System.err.println("Error: La lista debería tener 2 elementos");
+        }
+       
+        // Test mostrarLista
+        System.out.println("Mostrando lista:");
+        lista.mostrarLista();
+
+        // Test ordenarPorPatente
+        Vehiculo vehiculo3 = new Vehiculo("DEF456", "Modelo3");
+        lista.insertarUltimo(vehiculo3);
+        lista.ordenarPorPatente();
+        System.out.println("Mostrando lista ordenada por patente:");
+        lista.mostrarLista();
+
+        // Test Persona
+        Persona persona = new Persona(12345678, "Juan Perez");
+        persona.getListaVehiculos().insertarPrimero(vehiculo1);
+        persona.getListaVehiculos().insertarUltimo(vehiculo2);
+        persona.getListaVehiculos().insertarUltimo(vehiculo3);
+        
+        System.out.println("Mostrando persona y sus vehículos:");
+        persona.mostrarPersona();
+
+       
+
+        System.out.println("Todos los tests pasaron correctamente.");
+    }
 }
+

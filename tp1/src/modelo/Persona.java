@@ -4,8 +4,6 @@ public class Persona {
 	
 	private int dni;
 	private String nombre;
-	//Lo más importante del TP
-	//anidado por medio de un array Vehiculo[3]
 	private Lista listaVehiculos;
 	
 	
@@ -21,17 +19,12 @@ public class Persona {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	//Prestar atención
 	public Persona(int dni, String nombre) {
 		super();
 		this.dni = dni;
 		this.nombre = nombre;
 		this.listaVehiculos = new Lista();//solo se crea la lista
 	}
-	
-	
-	
-	
 	
 	@Override
 	public String toString() {
@@ -51,7 +44,4 @@ public class Persona {
 		listaVehiculos.mostrarLista();
 		
 	}
-	
-	
-
 }

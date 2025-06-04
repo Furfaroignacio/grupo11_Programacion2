@@ -1,7 +1,7 @@
 package modelo;
 
 import interfaces.INodo;
-import modelo.Vehiculo;
+
 
 public class Nodo implements INodo {
     private Vehiculo dato;

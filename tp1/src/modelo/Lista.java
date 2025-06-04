@@ -3,7 +3,7 @@ package modelo;
 import interfaces.ILista;
 import interfaces.INodo;
 
-//Saque la implementación implements ILista, OJO ustedes la mantienen
+
 public class Lista implements ILista  {
 	
     private Nodo primero;
@@ -76,4 +76,26 @@ public class Lista implements ILista  {
         }
         
     }
+    public void ordenarPorPatente() {
+        if (esVacia() || primero.getSiguiente() == null) {
+            return; 
+        }
+
+        boolean ordenado;
+        do {
+            ordenado = true;
+            INodo actual = primero;
+            while (actual.getSiguiente() != null) {
+                if (actual.getDato().getPatente().compareTo(actual.getSiguiente().getDato().getPatente()) > 0) {
+                    Vehiculo temp = actual.getDato();
+                    actual.setDato(actual.getSiguiente().getDato());
+                    actual.getSiguiente().setDato(temp);
+                    ordenado = false;
+                }
+                actual = actual.getSiguiente();
+            }
+        } while (!ordenado); 
+    }
+
+
 }
