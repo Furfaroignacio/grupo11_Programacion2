@@ -10,9 +10,9 @@ public class TestGrafoNoDirigido {
         Grafo<Persona> grafo = new Grafo<>(false); 
 
        
-        Persona p1 = new Persona(123, "Agustín");
-        Persona p2 = new Persona(456, "Lucía");
-        Persona p3 = new Persona(789, "Camila");
+        Persona p1 = new Persona(75423619, "Darin");
+        Persona p2 = new Persona(45646982, "Roberto");
+        Persona p3 = new Persona(78915796, "Bautista");
 
         
         grafo.agregarVertice(p1);
@@ -24,10 +24,10 @@ public class TestGrafoNoDirigido {
         grafo.conectar(p2, p3);
 
        
-        System.out.println("DFS desde Agustín (No dirigido)");
+        System.out.println("DFS desde Darin (No dirigido)");
         grafo.recorrerDFS(p1);
 
-        System.out.println("BFS desde Agustín (No dirigido)");
+        System.out.println("BFS desde Darin (No dirigido)");
         grafo.recorrerBFS(p1);
 
       

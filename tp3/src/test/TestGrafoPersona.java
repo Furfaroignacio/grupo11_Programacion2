@@ -12,11 +12,11 @@ public class TestGrafoPersona {
     	Grafo<Persona> grafo = new Grafo<>(true);
 
        
-        Persona p1 = new Persona(123, "Agustín");
-        Persona p2 = new Persona(456, "Lucía");
-        Persona p3 = new Persona(789, "Camila");
-        Persona p4 = new Persona(321, "Mateo");
-        Persona p5 = new Persona(654, "Valentina");
+        Persona p1 = new Persona(74019685, "Julian");
+        Persona p2 = new Persona(23847192, "Ignacio");
+        Persona p3 = new Persona(51928430, "Camila");
+        Persona p4 = new Persona(86713029, "Mateo");
+        Persona p5 = new Persona(39427561, "Valentina");
 
        
         grafo.agregarVertice(p1);
@@ -33,10 +33,10 @@ public class TestGrafoPersona {
         grafo.conectar(p4, p5);
 
       
-        System.out.println("=== Recorrido DFS desde Agustín ===");
+        System.out.println("=== Recorrido DFS desde Julian ===");
         grafo.recorrerDFS(p1);
 
-        System.out.println("=== Recorrido BFS desde Agustín ===");
+        System.out.println("=== Recorrido BFS desde Julian ===");
         grafo.recorrerBFS(p1);
 
        
