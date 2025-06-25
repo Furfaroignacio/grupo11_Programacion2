@@ -6,13 +6,12 @@ public class TestGrafoPonderado {
     public static void main(String[] args) {
         GrafoPonderado<String> redColectivos = new GrafoPonderado<>();
 
-        // Agregamos paradas
+        
         redColectivos.agregarVertice("A");
         redColectivos.agregarVertice("B");
         redColectivos.agregarVertice("C");
         redColectivos.agregarVertice("D");
 
-        // Conectamos con duraciones (pesos)
         redColectivos.conectar("A", "B", 5);
         redColectivos.conectar("A", "C", 10);
         redColectivos.conectar("B", "D", 7);
