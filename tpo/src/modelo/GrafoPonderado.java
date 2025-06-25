@@ -46,7 +46,7 @@ public class GrafoPonderado<T> implements IGrafoPonderado<T> {
             }
         }
 
-        // reconstruir camino
+       
         List<T> camino = new ArrayList<>();
         T paso = destino;
         while (paso != null) {
@@ -89,12 +89,7 @@ public class GrafoPonderado<T> implements IGrafoPonderado<T> {
         return distancias;
     }
 
-    @Override
-    public int[][] floyd() {
-        // Por implementar
-        return new int[0][0];
-    }
-
+   
     public void imprimirConexiones() {
         for (T origen : adyacencias.keySet()) {
             Map<T, Integer> destinos = adyacencias.get(origen);
